@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "http://www.gentoo.org/dtd/repositories.dtd">
+<repositories xmlns="" version="1.0">
+  <repo quality="experimental" status="unofficial">
+    <name>odroidc4</name>
+    <description lang="en">
+      Ebuilds for ODROID C4 nano computers.
+    </description>
+    <homepage>https://github.com/svoop/odroidc4-overlay</homepage>
+    <owner type="person">
+      <name>Sven Schwyn</name>
+      <email>gentoo@bitcetera.com</email>
+    </owner>
+    <source type="git">git://github.com/svoop/odroidc4-overlay.git</source>
+    <feed></feed>
+  </repo>
+</repositories>
