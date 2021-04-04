@@ -12,7 +12,7 @@ K_SECURITY_UNSUPPORTED=1
 inherit kernel-2 eapi7-ver
 detect_version
 
-MY_V=$(ver_cut 1-2)
+MY_PV=$(ver_cut 1-2).0
 
 DESCRIPTION="ODROID C4 kernel sources"
 HOMEPAGE="https://github.com/tobetter/linux"
@@ -28,7 +28,7 @@ src_unpack() {
 
 pkg_postinst() {
 	deb_url="http://ppa.linuxfactory.or.kr/pool/main/l/linux/"
-	deb_file=$(curl -s "${deb_url}" | grep "linux-image-${MY_V}.0-odroid-arm64" | tail -n 1 | grep -Po 'linux-image.*?deb(?=")')
+	deb_file=$(curl -s "${deb_url}" | grep "linux-image-${MY_PV}-odroid-arm64" | tail -n 1 | grep -Po 'linux-image.*?deb(?=")')
 	elog "To get a working upstream kernel config as a starting point:"
 	elog
 	elog "mkdir /tmp/odroidc4"
@@ -36,16 +36,16 @@ pkg_postinst() {
 	elog "(cd /tmp/odroidc4 && ar x image.deb data.tar.xz && tar xJf data.tar.xz)"
 	elog "cp /tmp/odroidc4/boot/config-* /usr/src/linux-${KV_FULL}/.config"
 	elog "rm -rf /tmp/odroidc4"
-  elog
-  elog "To build and install this kernel:"
-  elog
-  elog "cd -P /usr/src/linux"
-  elog "make oldconfig"
-  elog "make && make modules_install"
-  elog "make zinstall"
-  elog "make dtbs_install"
-  elog "dracut --force --kver ${V}"
-  elog "ln -fs initramfs-${V}.img /boot/initramfs.img"
-  elog "ln -fs dtbs/${V}/amlogic/meson64_odroidc4.dtb /boot/dtb-${V}"
-  elog "ln -fs dtb-${V} /boot/dtb"
+	elog
+	elog "To build and install this kernel:"
+	elog
+	elog "cd -P /usr/src/linux"
+	elog "make oldconfig"
+	elog "make && make modules_install"
+	elog "make zinstall"
+	elog "make dtbs_install"
+	elog "dracut --force --kver ${PV}"
+	elog "ln -fs initramfs-${PV}.img /boot/initramfs.img"
+	elog "ln -fs dtbs/${PV}/amlogic/meson64_odroidc4.dtb /boot/dtb-${PV}"
+	elog "ln -fs dtb-${PV} /boot/dtb"
 }
