@@ -48,7 +48,7 @@ wget http://ftp.free.fr/mirrors/ftp.gentoo.org/releases/arm64/autobuilds/current
 tar xJf $STAGE3.tar.xz -C /mnt/root/
 
 nano /mnt/root/etc/portage/make.conf
-| COMMON_FLAGS="-O2 -pipe -march=armv8-a+crc+fp+simd -mabi=lp64 -mcpu=cortex-a55+crc+fp+simd -ftree-vectorize --param l1-cache-size=32 --param l1-cache-line-size=32 --param l2-cache-size=512"
+| COMMON_FLAGS="-O2 -pipe -mcpu=cortex-a55 -mabi=lp64 -ftree-vectorize --param l1-cache-size=32 --param l1-cache-line-size=32 --param l2-cache-size=512"
 | CFLAGS="${COMMON_FLAGS}"
 | CXXFLAGS="${COMMON_FLAGS}"
 | FCFLAGS="${COMMON_FLAGS}"
