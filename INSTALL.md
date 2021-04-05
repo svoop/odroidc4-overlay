@@ -165,7 +165,7 @@ pico /boot/boot.ini
 | setenv root_uuid "{ROOT_UUID}"
 | setenv root_flags "defaults,subvol=@,noatime,compress=lzo,autodefrag"
 | setenv bootargs " ${bootargs} root=UUID=${root_uuid} rootflags=${root_flags}"
-| setenv overlays "hktft32 hktft35 pcf8563 spi0 sx865x-i2c1 w1-gpio_p15 w1-gpio_p22"
+| setenv overlays "pcf8563 spi0"
 |
 | setenv bootargs "${bootargs} console=tty1 cma=800M clk_ignore_unused"
 | setenv bootargs "${bootargs} console=ttyAML0,115200n8"
