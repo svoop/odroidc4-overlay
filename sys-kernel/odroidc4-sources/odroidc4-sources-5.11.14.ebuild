@@ -17,7 +17,7 @@ MY_PV=$(ver_cut 1-2).0
 
 DESCRIPTION="ODROID C4 kernel sources"
 HOMEPAGE="https://github.com/tobetter/linux"
-REF=36e79999c1966bbca0dbfa83171fa307441e8453
+REF=da0cd69598edc1735beca2765394d7f141b2baa6
 SRC_URI="https://github.com/tobetter/linux/archive/${REF}.tar.gz -> linux-${KV_FULL}.tar.gz"
 
 KEYWORDS="~arm64"
