@@ -48,7 +48,7 @@ pkg_postinst() {
 	elog "make zinstall"
 	elog "make dtbs_install"
 	elog "dracut --force --kver ${PV}${EXTRAVERSION}"
-	elog "ln -fs initramfs-${PV}.img /boot/initramfs.img"
-	elog "ln -fs dtbs/${PV}/amlogic/meson64_odroidc4.dtb /boot/dtb-${PV}"
-	elog "ln -fs dtb-${PV} /boot/dtb"
+	elog "ln -fs initramfs-${PV}${EXTRAVERSION}.img /boot/initramfs.img"
+	elog "ln -fs dtbs/${PV}${EXTRAVERSION}/amlogic/meson64_odroidc4.dtb /boot/dtb-${PV}${EXTRAVERSION}"
+	elog "ln -fs dtb-${PV}${EXTRAVERSION} /boot/dtb"
 }
