@@ -135,17 +135,9 @@ cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 pico /etc/timezone
 | Europe/Berlin
 
-pico /etc/portage/package.use/layman
-| app-portage/layman sync-plugin-portage
-| dev-vcs/git -perl
-emerge -av app-portage/layman dev-vcs/git
-layman -S
-pico /etc/layman/layman.cfg
-|   overlays  :
-|       https://api.gentoo.org/overlays/repositories.xml
-| +     https://github.com/svoop/odroidc4-overlay/raw/main/repositories.xml
-layman -S
-layman -a odroidc4
+emerge --ask app-eselect/eselect-repository
+eselect repository add odroidc4 git https://github.com/svoop/odroidc4-overlay
+emerge --sync
 
 emerge -av sys-fs/btrfs-progs
 blkid   # Get ROOT_UUID and BOOT_UUID
