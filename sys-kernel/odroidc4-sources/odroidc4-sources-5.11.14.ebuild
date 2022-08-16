@@ -3,14 +3,14 @@
 
 # Forked from sys-kernel/raspberrypi-sources
 
-EAPI=6
+EAPI=8
 
 ETYPE=sources
 K_DEFCONFIG="odroidc4_defconfig"
 K_SECURITY_UNSUPPORTED=1
 EXTRAVERSION="-${PN}/-*"
 
-inherit kernel-2 eapi7-ver
+inherit kernel-2
 detect_version
 
 MY_PV=$(ver_cut 1-2).0

@@ -135,7 +135,7 @@ cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 pico /etc/timezone
 | Europe/Berlin
 
-emerge --ask app-eselect/eselect-repository
+emerge -av app-eselect/eselect-repository
 eselect repository add odroidc4 git https://github.com/svoop/odroidc4-overlay
 emerge --sync
 
@@ -189,6 +189,7 @@ pico /etc/inittab
 | - f0:12345:respawn:/sbin/agetty 9600 ttyAMA0 vt100
 | + f0:12345:respawn:/sbin/agetty 115200 ttyAML0 xterm-256color
 
+emerge -av sys-apps/busybox
 pico /etc/conf.d/hostname
 | - hostname="localhost"
 | + hostname="odroidc4"
