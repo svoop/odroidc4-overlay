@@ -224,8 +224,8 @@ emerge -av odroidc4-sources
 # https://github.com/hardkernel/u-boot/releases
 
 cd
-RELEASE="183"
-wget https://github.com/hardkernel/u-boot/releases/download/travis%2Fodroidn2-$RELEASE/u-boot-odroidc4-$RELEASE.tar.gz
+RELEASE="189"
+wget https://github.com/hardkernel/u-boot/releases/download/travis%2Fodroidc4-$RELEASE/u-boot-odroidc4-$RELEASE.tar.gz
 tar xzf u-boot-odroidc4-*.tar.gz
 mv sd_fuse/u-boot.bin /boot
 chown root:root /boot/u-boot.bin
