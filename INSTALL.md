@@ -151,19 +151,22 @@ pico /boot/boot.ini
 | ODROIDC4-UBOOT-CONFIG
 |
 | setenv bootlabel "Gentoo Linux"
-| setenv fk_kvers "5.11.9"
-| setenv fdtfile "meson64_odroidc4.dtb"
+|
+| setenv fk_kvers "5.11.18-odroidc4"
+| # setenv fk_kvers "5.11.14-odroidc4"
 |
 | setenv root_uuid "{ROOT_UUID}"
 | setenv root_flags "defaults,subvol=@,noatime,compress=lzo,autodefrag"
 | setenv bootargs " ${bootargs} root=UUID=${root_uuid} rootflags=${root_flags}"
-| setenv overlays "pcf8563 spi0"
+|
+| setenv fdtfile "meson64_odroidc4.dtb"
+| setenv overlays "spi0 pcf8563"
 |
 | setenv bootargs "${bootargs} console=tty1 cma=800M clk_ignore_unused"
 | setenv bootargs "${bootargs} console=ttyAML0,115200n8"
 |
 | setenv fdt_addr_r "0x20000000"
-| setenv dtbo_addr_r 0x21000000
+| setenv dtbo_addr_r "0x21000000"
 | setenv zimage_addr_r ${ramdisk_addr_r}
 |
 | load ${devtype} ${devnum}:${partition} ${fdt_addr_r} ${prefix}dtbs/${fk_kvers}/amlogic/${fdtfile}
